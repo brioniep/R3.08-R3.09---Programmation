@@ -25,4 +25,4 @@ class pokemones:
         self.__vitesse = (self.__poid / 25 * self.__nageoires) / 2
     
 
-    
+    def 
