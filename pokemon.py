@@ -12,6 +12,10 @@ class pokemones:
         self.__nageoires = nageoires
         self.__vitesse = vitesse
 
+
+
+
+
     def poke_sport(self,):
         self.__vitesse = self.__pattes * 3
         
@@ -24,6 +28,3 @@ class pokemones:
     def poke_crois(self,):
         self.__vitesse = (self.__poid / 25 * self.__nageoires) / 2
     
-
-    def toString(self,):
-        print 
