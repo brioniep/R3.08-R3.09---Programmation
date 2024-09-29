@@ -1,13 +1,46 @@
 import time
 
-
-
-# 2. LE CONTEXTE
-
 class Personnage:
 
+    """
+        Classe représentant les personnages du jeux ainsi que leurs actions tels que les attaques et les methodes de combats
+    
+        .. py:attribute:: pseudo
+        
+            le nom du personnage
+            
+            :type:str
+        
+        .. py:attribute:: niveau
+            
+            le niveau du personnage
+            
+            :type:int
+            
+        .. py:attribute:: life_points
+            
+            points de vies du personnage
+            
+            :type:int
+            
+        .. py:attribute:: initiative
+            
+            capacité de réaction d'un personnage, détermine l'ordre d'attaque
+        
+            :type:int
+    """
+
     # Fonction constructeur
-    def __init__(self, pseudo, niveau=1, life_points=None, initiative=None):
+    def __init__(self, pseudo:str, niveau:int=1, life_points:int=None, initiative:int=None):
+        
+        """
+            Constructeur du personnage
+
+            :param pseudo: pseudo du personnage
+            :type pseudo: str
+            :param niveau: niveau du personnage
+            :type niveau: int
+        """
         self.pseudo = pseudo
         self.niveau = niveau
 
@@ -28,6 +61,14 @@ class Personnage:
     
     # Méthode pour attaquer un autre personnage
     def attaquer(self, autre_personnage):
+
+        """
+            Méthode permettant de géré les échanges de coup.
+
+            :param autre_personnage: deuxième joueur à attaquer
+            :return: None
+        """
+
         if self.initiative > autre_personnage.initiative:
             autre_personnage.life_points -= self.niveau
             if autre_personnage.life_points > 0:
